@@ -43,7 +43,9 @@ class AdminCategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        dd($request->all());
+	    $data = $request->all();
+	    $this->category->create( $data );
+	    return redirect( route('admin.categories') );
     }
 
     /**
@@ -88,6 +90,7 @@ class AdminCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->category->find($id)->delete();
+	    return redirect()->route( 'admin.categories' );
     }
 }
