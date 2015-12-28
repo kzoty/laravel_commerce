@@ -3,6 +3,7 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
+use CodeCommerce\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
@@ -21,7 +22,7 @@ class AdminCategoriesController extends Controller
 
 	public function index() {
 		$categories = $this->category->all();
-		return view('admin.categories', compact('categories'));
+		return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -31,7 +32,7 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -40,9 +41,9 @@ class AdminCategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
