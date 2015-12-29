@@ -22,7 +22,7 @@ class AdminProductsController extends Controller
 
 	public function index() {
 		$products =  $this->product->all();
-		return view('admin.products', compact('products'));
+		return view('admin.products.index', compact('products'));
 	}
 
     /**
@@ -32,7 +32,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**

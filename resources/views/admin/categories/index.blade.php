@@ -2,6 +2,9 @@
 
 @section('content')
     <h3>Categories</h3>
+    <div class="pull-right">
+        <a href="{!! route('admin.categories.create') !!}" class="btn btn-default glyphicon glyphicon-plus"></a>
+    </div>
     <table class="table table-hover">
         <thead>
             <th>#</th>

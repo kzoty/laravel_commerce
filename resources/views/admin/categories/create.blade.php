@@ -14,5 +14,4 @@
     {!! Form::open(['url'=>'/admin/categories/store']) !!}
     @include('admin.categories.fields')
     {!! Form::close() !!}
-
 @endsection
