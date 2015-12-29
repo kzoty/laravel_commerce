@@ -67,7 +67,8 @@ class AdminCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = $this->category->find( $id );
+	    return view('admin.categories.edit', compact( 'category' ));
     }
 
     /**
@@ -77,9 +78,11 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $this->category->find( $id )->update( $request->all() );
+	    return redirect( route('admin.categories') );
+
     }
 
     /**

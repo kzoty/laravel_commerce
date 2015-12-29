@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @section('content')
-    <h3>Create Category</h3>
+    <h3>Edit Category</h3>
     @if( $errors->any() )
         <div class="alert alert-danger" role="alert">
             <ul>
@@ -11,8 +11,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::open(['url'=>'/admin/categories/store']) !!}
+    {!! Form::model($category, ['route'=>['admin.categories.update', $category->id], 'method'=>'put']) !!}
     @include('admin.categories.fields')
     {!! Form::close() !!}
-
 @endsection
