@@ -50,17 +50,6 @@ class AdminProductsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -68,7 +57,8 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->product->find( $id );
+        return view( 'admin.products.edit', compact( 'product' ) );
     }
 
     /**
@@ -78,9 +68,10 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $this->product->find( $id )->update( $request->all() );
+        return redirect()->route( 'admin.products' );
     }
 
     /**
@@ -91,6 +82,7 @@ class AdminProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->product->find( $id )->delete();
+        return redirect()->route( 'admin.products' );
     }
 }

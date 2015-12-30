@@ -18,12 +18,14 @@
 
 <div class="checkbox">
     <label>
+        {!! Form::hidden('featured', 0) !!}
         {!! Form::checkbox('featured', 1, null) !!} Featured
     </label>
 </div>
 
 <div class="checkbox">
     <label>
+        {!! Form::hidden('recommended', 0) !!}
         {!! Form::checkbox('recommended', 1, null) !!} Recommended
     </label>
 </div>
