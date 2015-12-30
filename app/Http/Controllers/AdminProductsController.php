@@ -2,6 +2,7 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Http\Requests\ProductRequest;
 use CodeCommerce\Product;
 use Illuminate\Http\Request;
 
@@ -41,9 +42,11 @@ class AdminProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $this->product->fill( $request->all() );
+        $this->product->save();
+        return redirect()->route( 'admin.products' );
     }
 
     /**
