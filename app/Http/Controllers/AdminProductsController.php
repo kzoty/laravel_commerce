@@ -61,13 +61,13 @@ class AdminProductsController extends Controller
         return view( 'admin.products.edit', compact( 'product' ) );
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param ProductRequest|Pro $request
+	 * @param  int $id
+	 * @return \Illuminate\Http\Response
+	 */
     public function update(ProductRequest $request, $id)
     {
         $this->product->find( $id )->update( $request->all() );

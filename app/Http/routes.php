@@ -37,3 +37,5 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get( '/destroy/{id}', ['as'=>'admin.products.destroy', 'uses' => 'AdminProductsController@destroy'] );
     });
 });
+
+Route::resource('test', 'TestController');
