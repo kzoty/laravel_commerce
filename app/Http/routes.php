@@ -35,5 +35,9 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get( '/edit/{id}', ['as'=>'admin.products.edit', 'uses' => 'AdminProductsController@edit'] );
         Route::put( '/update/{id}', ['as'=>'admin.products.update', 'uses' => 'AdminProductsController@update'] );
         Route::get( '/destroy/{id}', ['as'=>'admin.products.destroy', 'uses' => 'AdminProductsController@destroy'] );
+
+        Route::get('/{id}/images', ['as'=>'admin.products.images', 'uses' => 'AdminProductsController@images']);
+        Route::get('/{id}/createimage', ['as'=>'admin.products.createimage', 'uses' => 'AdminProductsController@createimage']);
+        Route::post('/{id}/storeimage', ['as'=>'admin.products.storeimage', 'uses' => 'AdminProductsController@storeimage']);
     });
 });

@@ -88,4 +88,19 @@ class AdminProductsController extends Controller
         $this->product->find( $id )->delete();
         return redirect()->route( 'admin.products' );
     }
+
+    public function images( $id ) {
+        $product = $this->product->find( $id );
+
+        return view('admin.products.images', compact('product'));
+    }
+
+    public function createImage( $id ){
+        $product = $this->product->find( $id );
+        return view( 'admin.products.createimage', compact('product') );
+    }
+
+	public function storeImage( Request $request, $id ) {
+		dd($request);
+	}
 }

@@ -10,4 +10,11 @@ class ProductImage extends Model
         "product_id",
         "extension",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product() {
+        return $this->belongsTo(Product::class);
+    }
 }
