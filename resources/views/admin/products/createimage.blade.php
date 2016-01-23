@@ -9,6 +9,7 @@
     </div>
 
     <div class="form-group">
+        <a href="{{ route('admin.products.images', ['id' => $product->id])  }}" class="btn btn-default">Cancel</a>
         {!! Form::submit('Upload Image',['class'=>'btn btn-primary']) !!}
     </div>
 

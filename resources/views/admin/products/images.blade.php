@@ -16,14 +16,15 @@
             <tbody>
             <tr>
                 <td>{{$image->id}}</td>
-                <td></td>
+                <td><img src="{{url('uploads/'.$image->id.'.'.$image->extension)}}" width="80"></td>
                 <td>{{$image->description}}</td>
                 <td>{{$image->extension}}</td>
                 <td>
-                    delete
+                    <a href="{{route('admin.products.destroyimage', ['id'=>$image->id])}}" class="btn btn-sm btn-danger glyphicon glyphicon-remove"></a>
                 </td>
             </tr>
             @endforeach
             </tbody>
     </table>
+    <a href="{{route('admin.products')}}" class="btn btn-default">Back</a>
 @endsection
