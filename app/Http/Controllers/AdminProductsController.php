@@ -3,6 +3,7 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
+use CodeCommerce\Http\Requests\ProductImageRequest;
 use CodeCommerce\Http\Requests\ProductRequest;
 use CodeCommerce\Product;
 use CodeCommerce\ProductImage;
@@ -103,7 +104,7 @@ class AdminProductsController extends Controller
         return view( 'admin.products.createimage', compact('product') );
     }
 
-	public function storeImage( Request $request, $id, ProductImage $productImage ) {
+	public function storeImage( ProductImageRequest $request, $id, ProductImage $productImage ) {
 		$file = $request->file('image');
 		$extension = $file->getClientOriginalExtension();
 
@@ -123,6 +124,5 @@ class AdminProductsController extends Controller
         $image->delete();
 
         return redirect()->route('admin.products.images', ['id' => $productId]);
-
     }
 }
