@@ -36,6 +36,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('tag_list', 'Tags:') !!}
+    {!! Form::text('tag_list', null, ['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::submit('SAVE', ['class'=> 'btn btn-primary']) !!}
     <a href="{{route('admin.products')}}" class="btn btn-default">Back</a>
 </div>

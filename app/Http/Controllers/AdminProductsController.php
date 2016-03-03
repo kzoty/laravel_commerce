@@ -7,6 +7,7 @@ use CodeCommerce\Http\Requests\ProductImageRequest;
 use CodeCommerce\Http\Requests\ProductRequest;
 use CodeCommerce\Product;
 use CodeCommerce\ProductImage;
+use CodeCommerce\Tag;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
@@ -27,7 +28,8 @@ class AdminProductsController extends Controller
 	}
 
 	public function index() {
-		$products =  $this->product->paginate(10);
+
+        $products =  $this->product->paginate(10);
 		return view('admin.products.index', compact('products'));
 	}
 
@@ -52,7 +54,28 @@ class AdminProductsController extends Controller
     {
         $this->product->fill( $request->all() );
         $this->product->save();
+
+        /**
+         * Sync Tags
+         */
+        $this->product->tags()->sync( $this->getTagIds( $request->tag_list ) );
+
         return redirect()->route( 'admin.products' );
+    }
+
+
+    /**
+     * @param string $tags
+     * @return array
+     */
+    private function getTagIds( $tags ) {
+        $tags = array_filter( array_map( 'trim', explode(',', $tags ) ) );
+        $tagsIds = [];
+        foreach ( $tags as $eachTagName ) {
+            $tagsIds[] = Tag::firstOrCreate(['name' => $eachTagName])->id;
+        }
+
+        return $tagsIds;
     }
 
     /**
@@ -78,6 +101,12 @@ class AdminProductsController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $this->product->find( $id )->update( $request->all() );
+
+        /**
+         * Sync Tags
+         */
+        $this->product->find( $id )->tags()->sync( $this->getTagIds( $request->tag_list ) );
+
         return redirect()->route( 'admin.products' );
     }
 
