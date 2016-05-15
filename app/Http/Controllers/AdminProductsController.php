@@ -154,4 +154,7 @@ class AdminProductsController extends Controller
 
         return redirect()->route('admin.products.images', ['id' => $productId]);
     }
+
+    public function hello() {
+    }
 }
