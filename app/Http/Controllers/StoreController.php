@@ -13,8 +13,16 @@ class StoreController extends Controller {
 
     public function index() {
         $categories = Category::all();
-        $prodsFeatured = Product::where("featured","=", 1)->get();
+        $prodsFeatured = Product::featured()->get();
+        $prodsRecommended = Product::recommended()->get();
         
-        return view( 'store.index', compact('categories', 'prodsFeatured') );
+        return view( 'store.index', compact( 'categories', 'prodsFeatured', 'prodsRecommended' ) );
     }
+
+	public function listByCategory( $id ) {
+		$categories = Category::all();
+		$category = Category::find( $id );
+
+		return view( 'store.category', compact( 'categories', 'category' ) );
+	}
 }

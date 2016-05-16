@@ -31,4 +31,33 @@ class Product extends Model
 		$tags = $this->tags->lists( 'name' )->all();
 		return implode(',',$tags);
 	}
+
+	/**
+	 * Featured Products
+	 *
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeFeatured( $query ) {
+		return $query->where( "featured", "=", 1 );
+	}
+
+	/**
+	 * Recommended Products
+	 *
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeRecommended( $query ) {
+		return $query->where( "recommended", "=", 1 );
+	}
+
+	/**
+	 * @param $query
+	 * @param $id
+	 * @return mixed
+	 */
+	public function scopeByCategory( $query, $id ) {
+		return $query->where( 'category_id', "=", $id );
+	}
 }

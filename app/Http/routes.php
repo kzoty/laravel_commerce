@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', 'StoreController@index');
+Route::get('/', ['as' => 'store.home', 'uses' => 'StoreController@index'] );
+Route::get( '/category/{id}', ['as' => 'store.bycategory', 'uses' => 'StoreController@listByCategory' ] );
 
 /**
  * Admin Routes
  */
 Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', function(){
+        return redirect(route( 'admin.products' ));
+    });
+
     Route::group(['prefix' => 'categories'], function(){
         Route::get( '/', ['as'=>'admin.categories', 'uses' => 'AdminCategoriesController@index'] );
         Route::get( '/create', ['as'=>'admin.categories.create', 'uses' => 'AdminCategoriesController@create'] );

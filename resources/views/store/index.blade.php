@@ -50,24 +50,29 @@
         <div class="features_items"><!--recommended-->
             <h2 class="title text-center">Recomendados</h2>
 
+	        @foreach($prodsRecommended as $prodRecommended)
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
 
 
-                            <img src="/images/no-img.jpg" alt="" width="200"/>
+	                        @if(count($prodRecommended->images))
+		                        <img src="/uploads/{{$prodRecommended->images[0]->id}}.jpg" alt="" />
+	                        @else
+		                        <img src="/images/no-img.jpg">
+	                        @endif
 
-                            <h2>R$ 14,00</h2>
-                            <p>quasi</p>
+                            <h2>R$ {{$prodRecommended->price}}</h2>
+                            <p>{{$prodRecommended->name}}</p>
                             <a href="/product/4" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
 
                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
                         </div>
                         <div class="product-overlay">
                             <div class="overlay-content">
-                                <h2>R$ 14</h2>
-                                <p>quasi</p>
+                                <h2>R$ {{$prodRecommended->price}}</h2>
+                                <p>{{$prodRecommended->name}}</p>
                                 <a href="/product/4" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
 
                                 <a href="/cart/4/add" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
@@ -76,60 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        <div class="productinfo text-center">
-
-
-                            <img src="/images/no-img.jpg" alt="" width="200"/>
-
-                            <h2>R$ 96,00</h2>
-                            <p>officia</p>
-                            <a href="/product/5" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
-
-                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="overlay-content">
-                                <h2>R$ 96</h2>
-                                <p>officia</p>
-                                <a href="/product/5" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
-
-                                <a href="/cart/5/add" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        <div class="productinfo text-center">
-
-
-
-                            <img src="/uploads/14.jpg" alt="" />
-
-
-                            <h2>R$ 34.343,00</h2>
-                            <p>fdsfsfdsfs</p>
-                            <a href="/product/42" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
-
-                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="overlay-content">
-                                <h2>R$ 34343</h2>
-                                <p>fdsfsfdsfs</p>
-                                <a href="/product/42" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
-
-                                <a href="/cart/42/add" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			@endforeach
 
         </div><!--recommended-->
 
