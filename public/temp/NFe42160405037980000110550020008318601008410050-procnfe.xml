@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe"
+         xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         versao="3.10">
+
+	<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+		<infNFe Id="NFe42160405037980000110550020008318601008410050" versao="3.10">
+			<ide>
+				<cUF>42</cUF>
+				<cNF>00841005</cNF>
+				<natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+				<indPag>1</indPag>
+				<mod>55</mod>
+				<serie>2</serie>
+				<nNF>831860</nNF>
+				<dhEmi>2016-04-21T23:37:34-02:00</dhEmi>
+				<dhSaiEnt>2016-04-21T23:37:34-02:00</dhSaiEnt>
+				<tpNF>1</tpNF>
+				<idDest>1</idDest>
+				<cMunFG>4202305</cMunFG>
+				<tpImp>1</tpImp>
+				<tpEmis>1</tpEmis>
+				<cDV>0</cDV>
+				<tpAmb>1</tpAmb>
+				<finNFe>1</finNFe>
+				<indFinal>0</indFinal>
+				<indPres>9</indPres>
+				<procEmi>0</procEmi>
+				<verProc>1</verProc>
+			</ide>
+
+			<emit>
+				<CNPJ>05037980000110</CNPJ>
+				<xNome>S.O.S DISTRIBUIDORA DE ALIMENTOS LTDA</xNome>
+				<xFant>S.O.S  IMPORTADORA E DISTRIBUIDORA LTDA</xFant>
+
+				<enderEmit>
+					<xLgr>CONEGO RODOLFO MACHADO</xLgr>
+					<nro>999</nro>
+					<xBairro>rio caveiras</xBairro>
+					<cMun>4202305</cMun>
+					<xMun>Biguacu</xMun>
+					<UF>SC</UF>
+					<CEP>88160000</CEP>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+					<fone>4832467794</fone>
+				</enderEmit>
+
+				<IE>254431267</IE>
+				<CRT>3</CRT>
+			</emit>
+
+			<dest>
+				<CNPJ>78815990000103</CNPJ>
+				<xNome>REMI PEREIRA ME</xNome>
+				<enderDest>
+					<xLgr>Rua das Hortencias</xLgr>
+					<nro>SN</nro>
+					<xBairro>Daniela</xBairro>
+					<cMun>4205407</cMun>
+					<xMun>Florianopolis</xMun>
+					<UF>SC</UF>
+					<CEP>88053000</CEP>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+					<fone>32824412</fone>
+				</enderDest>
+				<indIEDest>1</indIEDest>
+				<IE>253255406</IE>
+				<email>ROBSONREMIPEREIRA@GMAIL.COM</email>
+			</dest>
+
+			<det nItem="1">
+				<prod>
+					<cProd>12493</cProd>
+					<cEAN/>
+					<xProd>LINGuIcA TOSCANA FRICASA</xProd>
+					<NCM>16010000</NCM>
+					<CEST>1708300</CEST>
+					<EXTIPI>16</EXTIPI>
+					<CFOP>5405</CFOP>
+					<uCom>KG</uCom>
+					<qCom>3.0000</qCom>
+					<vUnCom>10.9900</vUnCom>
+					<vProd>32.97</vProd>
+					<cEANTrib/>
+					<uTrib>KG</uTrib>
+					<qTrib>3.0000</qTrib>
+					<vUnTrib>10.9900</vUnTrib>
+					<indTot>1</indTot>
+					<nItemPed>1</nItemPed>
+				</prod>
+				<imposto>
+					<ICMS>
+						<ICMS60>
+							<orig>0</orig>
+							<CST>60</CST>
+							<vBCSTRet>32.97</vBCSTRet>
+							<vICMSSTRet>0.00</vICMSSTRet>
+						</ICMS60>
+					</ICMS>
+					<PIS>
+						<PISAliq>
+							<CST>01</CST>
+							<vBC>32.97</vBC>
+							<pPIS>1.65</pPIS>
+							<vPIS>0.54</vPIS>
+						</PISAliq>
+					</PIS>
+					<COFINS>
+						<COFINSAliq>
+							<CST>01</CST>
+							<vBC>32.97</vBC>
+							<pCOFINS>7.60</pCOFINS>
+							<vCOFINS>2.51</vCOFINS>
+						</COFINSAliq>
+					</COFINS>
+				</imposto>
+			</det>
+
+			<det nItem="2">
+				<prod>
+					<cProd>9826</cProd>
+					<cEAN/>
+					<xProd>ALCATRA MIOLO RESF JJZ</xProd>
+					<NCM>02013000</NCM>
+					<CEST>1708900</CEST>
+					<EXTIPI>02</EXTIPI>
+					<CFOP>5102</CFOP>
+					<uCom>KG</uCom>
+					<qCom>9.0000</qCom>
+					<vUnCom>19.9000</vUnCom>
+					<vProd>179.10</vProd>
+					<cEANTrib/>
+					<uTrib>KG</uTrib>
+					<qTrib>9.0000</qTrib>
+					<vUnTrib>19.9000</vUnTrib>
+					<indTot>1</indTot>
+					<nItemPed>2</nItemPed>
+				</prod>
+				<imposto>
+					<ICMS>
+						<ICMS20>
+							<orig>0</orig>
+							<CST>20</CST>
+							<modBC>3</modBC>
+							<pRedBC>41.67</pRedBC>
+							<vBC>104.47</vBC>
+							<pICMS>12.00</pICMS>
+							<vICMS>12.54</vICMS>
+						</ICMS20>
+					</ICMS>
+					<PIS>
+						<PISNT>
+							<CST>07</CST>
+						</PISNT>
+					</PIS>
+					<COFINS>
+						<COFINSNT>
+							<CST>07</CST>
+						</COFINSNT>
+					</COFINS>
+				</imposto>
+				<infAdProd>BASE CALC RED 41,67%</infAdProd>
+			</det>
+
+			<det nItem="3">
+				<prod>
+					<cProd>11360</cProd>
+					<cEAN/>
+					<xProd>COXaO MOLE RESF MATA BOI</xProd>
+					<NCM>02013000</NCM>
+					<CEST>1708900</CEST>
+					<EXTIPI>02</EXTIPI>
+					<CFOP>5102</CFOP>
+					<uCom>KG</uCom>
+					<qCom>11.0000</qCom>
+					<vUnCom>16.9900</vUnCom>
+					<vProd>186.89</vProd>
+					<cEANTrib/>
+					<uTrib>KG</uTrib>
+					<qTrib>11.0000</qTrib>
+					<vUnTrib>16.9900</vUnTrib>
+					<indTot>1</indTot>
+					<nItemPed>3</nItemPed>
+				</prod>
+				<imposto>
+					<ICMS>
+						<ICMS20>
+							<orig>0</orig>
+							<CST>20</CST>
+							<modBC>3</modBC>
+							<pRedBC>41.67</pRedBC>
+							<vBC>109.01</vBC>
+							<pICMS>12.00</pICMS>
+							<vICMS>13.08</vICMS>
+						</ICMS20>
+					</ICMS>
+					<PIS>
+						<PISNT>
+							<CST>07</CST>
+						</PISNT>
+					</PIS>
+					<COFINS>
+						<COFINSNT>
+							<CST>07</CST>
+						</COFINSNT>
+					</COFINS>
+				</imposto>
+				<infAdProd>BASE CALC RED 41,67%</infAdProd>
+			</det>
+
+			<total>
+				<ICMSTot>
+					<vBC>213.48</vBC>
+					<vICMS>25.62</vICMS>
+					<vICMSDeson>0.00</vICMSDeson>
+					<vFCPUFDest>0.00</vFCPUFDest>
+					<vICMSUFDest>0.00</vICMSUFDest>
+					<vBCST>0.00</vBCST>
+					<vST>0.00</vST>
+					<vProd>398.96</vProd>
+					<vFrete>0.00</vFrete>
+					<vSeg>0.00</vSeg>
+					<vDesc>0.00</vDesc>
+					<vII>0.00</vII>
+					<vIPI>0.00</vIPI>
+					<vPIS>0.54</vPIS>
+					<vCOFINS>2.51</vCOFINS>
+					<vOutro>0.00</vOutro>
+					<vNF>398.96</vNF>
+					<vTotTrib>0.00</vTotTrib>
+				</ICMSTot>
+				<retTrib/>
+			</total>
+			<transp>
+				<modFrete>0</modFrete>
+				<transporta>
+					<CNPJ>08408666000195</CNPJ>
+					<xNome>THALES EDUARDO MERCURIO ODERDENGE ME</xNome>
+					<IE>255286040</IE>
+					<xEnder>Antonio Schroeder , SN</xEnder>
+					<xMun>Sao Jose</xMun>
+					<UF>SC</UF>
+				</transporta>
+				<vol>
+					<qVol>0</qVol>
+					<esp>KG</esp>
+					<pesoL>23.000</pesoL>
+					<pesoB>0.000</pesoB>
+				</vol>
+			</transp>
+			<cobr>
+				<fat>
+					<nFat>831860</nFat>
+					<vOrig>398.96</vOrig>
+					<vLiq>398.96</vLiq>
+				</fat>
+				<dup>
+					<nDup>8410051</nDup>
+					<dVenc>2016-05-05</dVenc>
+					<vDup>398.96</vDup>
+				</dup>
+			</cobr>
+			<infAdic>
+				<infAdFisco>PEDIDO Nr841005 CLIENTE: 40701-RESTAURANTE DOREMI CONTATO: REMI FONE: 32824412- HORA ENTREGA: 08:00 as 12:00 ou 13:30 as 18:00 VENDEDOR: DIOGO RICARDO WAZLAWICK - 0</infAdFisco>
+			</infAdic>
+		</infNFe>
+
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="#NFe42160405037980000110550020008318601008410050">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue>IPwLShTo4yHTe60T0UlPRHu0Qk8=</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>Oh7GOFhKy6X2lFy/8qOcromeUvs2G7dMYXgGCr1T/zIg8b+RKzsOyZd662YCdzEyBuX+QvZeME9i
+				lKXHXS921btTcdMhn5GjPCty3Dw52oPbtOhVjoiCMbGFpo12mfjV6HFzgVzcnYqnRuxynw+E3xOy
+				yd7SPKvSH89KhHP+1CjfYbbbhfajq8QMATNkzMwleSeNK6/M7jQSP/39nrsJBksDVGXDoW89+noq
+				e8hvns0JdWEh6vnXJ7bf1exO+B4KsmTiEU7P0fwyW0oXNx1rNs/KNH+CiDFid60K0ORENnLSY6c5
+				aOW/PKCOVHzwu6t4BxAM8THHNSU0x9SqOpWr9g==</SignatureValue><KeyInfo><X509Data>
+			<X509Certificate>MIIHijCCBXKgAwIBAgIEAMlKGTANBgkqhkiG9w0BAQsFADCBiTELMAkGA1UEBhMCQlIxEzARBgNV
+				BAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRv
+				IEJyYXNpbCAtIFJGQjEtMCsGA1UEAxMkQXV0b3JpZGFkZSBDZXJ0aWZpY2Fkb3JhIFNFUlBST1JG
+				QnY0MB4XDTE1MDUwNTE5MzYwOFoXDTE2MDUwNDE5MzYwOFowgeMxCzAJBgNVBAYTAkJSMQswCQYD
+				VQQIEwJTQzERMA8GA1UEBxMIU0FPIEpPU0UxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsT
+				LVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjETMBEGA1UECxMK
+				QVJDT1JSRUlPUzEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTE6MDgGA1UEAxMxUyBPIFMgQUxJTUVO
+				VE9TIEUgVFJBTlNQT1JURVMgTFREQTowNTAzNzk4MDAwMDExMDCCASIwDQYJKoZIhvcNAQEBBQAD
+				ggEPADCCAQoCggEBAL4gQoCaG0XBRdLaj8DyG78EtqybZ256qQoCWa04jQEVo/EjfCRxjijT9keN
+				23mSZDYCd/pq86+Yr22G+tfdcDWgg45uQLy8snY9wevEx2q22UiW4i8kC3iYHfiLeZrWse5QwIYW
+				wlD+wfZtf/yP1Bizmxd1SP+4myG9dNTcIOmN1secKU3hYR2e7XFFlQQ+V6ScaL3y3jrvxbxmHc7H
+				OkVJMTefNOaSIE/6+kjbQev3vjB3wo7rcK1YkUSHtGA0NU5YBEwhg5hMnRcXYgU2cmlnfDK1YS5j
+				Dfddh/7GSoLkJ+4MubNUs23gdfkVCfFW2ekznCjBgcMqCx24okz5C4UCAwEAAaOCApwwggKYMB8G
+				A1UdIwQYMBaAFDAKLAy4Nyvg9toC/oCCZ5aYVBk7MFsGA1UdIARUMFIwUAYGYEwBAgEKMEYwRAYI
+				KwYBBQUHAgEWOGh0dHA6Ly9yZXBvc2l0b3Jpby5zZXJwcm8uZ292LmJyL2RvY3MvZHBjYWNzZXJw
+				cm9yZmIucGRmMIHRBgNVHR8EgckwgcYwPKA6oDiGNmh0dHA6Ly9yZXBvc2l0b3Jpby5zZXJwcm8u
+				Z292LmJyL2xjci9hY3NlcnByb3JmYnY0LmNybDA+oDygOoY4aHR0cDovL2NlcnRpZmljYWRvczIu
+				c2VycHJvLmdvdi5ici9sY3IvYWNzZXJwcm9yZmJ2NC5jcmwwRqBEoEKGQGh0dHA6Ly9yZXBvc2l0
+				b3Jpby5pY3BicmFzaWwuZ292LmJyL2xjci9zZXJwcm8vYWNzZXJwcm9yZmJ2NC5jcmwwVgYIKwYB
+				BQUHAQEESjBIMEYGCCsGAQUFBzAChjpodHRwOi8vcmVwb3NpdG9yaW8uc2VycHJvLmdvdi5ici9j
+				YWRlaWFzL2Fjc2VycHJvcmZidjQucDdiMIG8BgNVHREEgbQwgbGgOAYFYEwBAwSgLwQtMDgwNjE5
+				NjU1MTgzNTU0MTk2ODAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoCAGBWBMAQMCoBcEFUFSSUxE
+				TyBMVUlaIE9ERVJERU5HRaAZBgVgTAEDA6AQBA4wNTAzNzk4MDAwMDExMKAXBgVgTAEDB6AOBAww
+				MDAwMDAwMDAwMDCBH1RBQkFUQUBDT05USEFMRVNDT05UQUJJTC5DT00uQlIwDgYDVR0PAQH/BAQD
+				AgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjANBgkqhkiG9w0BAQsFAAOCAgEATLjs
+				NfmdIoz8u197heo/QWMzjFx3LmIUT9fliug9sGu5Z/dD3zInnsn+ESuRB7/ER4NWEFQiEOrr1nOp
+				dx+Mem1itcwCeDyTfsZoLk7GZZT6tsoaCPX0XyRX/32nC0mbGRI0x+885TNvfeOO9oxRjKyyswzY
+				26tyUwcv+xtKNu5bV3XrOpbUfH0Ui1AUO5TxqMjVfcLeMQWqaGcXt8lt/S37ojBgXA/KJEjQd2Ka
+				8FOji620uArQxj/ooqkqsC0gDm5cls+ZJ9hLlqAXB3felQ1FP5lOCT2Kf8IAoxQDK7sAszdNvF2y
+				CJId08w6K5lclRALJtoEqSxcXxTfPuXMChzj+WNtwXnqvQZxSpq6EhCitA0N0NdILHN/Y2Udj4W1
+				c4rAJSlTOdT9IAZ8wMZNPvWFZM5f+LHvS6ekhhgzWFCtHF/7yejkolRjW3YuVVL2Y8/IRYdkYVQd
+				5pW3LZ3YXPbUprhOSH/rV8XFJMoNfKqcARb3Cst5iWKz5XTaLQ7s+ei4bnDz3kXBs+NXx4U4N0Cm
+				/6QPLJqiNd7vFBN7ROC1N4d8YCyR6xY7oi1pWCC4zaF81+TdndkTee2c6EeYteGuFskmBoIQfvi5
+				0FOIZdHNGQAfN5DQdC3AG/R9fkN7S38QQtWlN70o0Vd8P9xv7L7NzovUo9+ghYRfObSrVPo=</X509Certificate>
+		</X509Data>
+		</KeyInfo>
+		</Signature>
+	</NFe>
+	<protNFe versao="3.10">
+		<infProt>
+			<tpAmb>1</tpAmb>
+			<verAplic>SVRS201604141332</verAplic>
+			<chNFe>42160405037980000110550020008318601008410050</chNFe>
+			<dhRecbto>2016-04-21T23:37:43-03:00</dhRecbto>
+			<nProt>342160046198880</nProt>
+			<digVal>IPwLShTo4yHTe60T0UlPRHu0Qk8=</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso da NF-e</xMotivo>
+		</infProt>
+	</protNFe>
+</nfeProc>
