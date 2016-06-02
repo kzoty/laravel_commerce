@@ -57,7 +57,7 @@ class Product extends Model
 	 * @param $id
 	 * @return mixed
 	 */
-	public function scopeByCategory( $query, $id ) {
-		return $query->where( 'category_id', "=", $id );
-	}
+	#public function scopeByCategory( $query, $id ) {
+	#	return $query->where( 'category_id', "=", $id );
+	#}
 }
