@@ -12,19 +12,22 @@ use CodeCommerce\Http\Controllers\Controller;
 
 class StoreController extends Controller {
 
-    public function index() {
-        $categories = Category::all();
+	public function __construct() {
+		$categories = Category::all();
+		view()->share('categories', $categories);
+	}
+
+	public function index() {
         $prodsFeatured = Product::featured()->get();
         $prodsRecommended = Product::recommended()->get();
         
-        return view( 'store.index', compact( 'categories', 'prodsFeatured', 'prodsRecommended' ) );
+        return view( 'store.index', compact( 'prodsFeatured', 'prodsRecommended' ) );
     }
 
 	public function listByCategory( $id ) {
-		$categories = Category::all();
 		$category = Category::find( $id );
 
-		return view( 'store.category', compact( 'categories', 'category' ) );
+		return view( 'store.category', compact( 'category' ) );
 	}
 
 	/**
@@ -32,16 +35,14 @@ class StoreController extends Controller {
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function product( $id ){
-		$categories = Category::all();
 		$product = Product::find( $id );
 
-		return view( 'store.product', compact( 'categories', 'product' ) );
+		return view( 'store.product', compact( 'product' ) );
 	}
 
 	public function listByTag( $id ) {
         $tag = Tag::find( $id );
 		$products = Product::getProductsByTag( $id );
-        $categories = Category::all();
-		return view( 'store.tag', compact('tag', 'categories', 'products') );
+		return view( 'store.tag', compact('tag', 'products') );
 	}
 }
