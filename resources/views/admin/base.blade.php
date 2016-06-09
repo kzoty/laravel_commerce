@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Admin Page - Laravel Commerce - Code</title>
 
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{elixir('css/all.css')}}" rel="stylesheet">
+
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -18,9 +18,6 @@
 <div class="container">
     @yield('content')
 </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/js/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/bootstrap.min.js"></script>
+<script src="{{elixir('js/all.js')}}"></script>
 </body>
 </html>

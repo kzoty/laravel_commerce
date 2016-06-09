@@ -32,6 +32,10 @@ class Product extends Model
 		return implode(',',$tags);
 	}
 
+	static public function getProductsByTag( $id ) {
+		return Tag::find( $id )->products;
+	}
+
 	/**
 	 * Featured Products
 	 *

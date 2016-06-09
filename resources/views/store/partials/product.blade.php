@@ -12,7 +12,7 @@
 
 				<h2>R$ {{ $product->price }}</h2>
 				<p>{{ $product->name }}</p>
-				<a href="/product/2" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
+				<a href="{{route('store.product', $product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
 
 				<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
 			</div>
@@ -20,7 +20,7 @@
 				<div class="overlay-content">
 					<h2>R$ {{ $product->price }}</h2>
 					<p>{{ $product->name }}</p>
-					<a href="/product/2" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
+					<a href="{{route('store.product', $product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-crosshairs"></i>Mais detalhes</a>
 
 					<a href="/cart/2/add" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar no carrinho</a>
 				</div>

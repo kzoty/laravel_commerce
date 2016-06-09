@@ -27,7 +27,7 @@
                 <td>{{$product->category->name}}</td>
                 <td>$ {{$product->price}}</td>
                 <td>
-                    <a href="{{route('admin.products.edit',['id'=>$product->id])}}"><i class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></i></a>
+                    <a href="{{route('admin.products.edit',['id'=>$product->id])}}"><i class="btn btn-sm glyphicon glyphicon-pencil"></i></a>
                     <a href="{{route('admin.products.images',['id'=>$product->id])}}"><i class="btn btn-sm btn-default glyphicon glyphicon-picture"></i></a>
                     <a class="pull-right" href="{{route('admin.products.destroy',['id'=>$product->id])}}"><i class="glyphicon glyphicon-remove btn btn-sm btn-danger"></i></a>
                 </td>
