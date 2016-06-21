@@ -15,6 +15,8 @@ Route::get('/', ['as' => 'store.home', 'uses' => 'StoreController@index'] );
 Route::get( '/category/{id}', ['as' => 'store.bycategory', 'uses' => 'StoreController@listByCategory' ] );
 Route::get( '/product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product' ] );
 Route::get( '/tag/{id}', ['as' => 'store.bytag', 'uses' => 'StoreController@listByTag' ] );
+Route::get( '/cart', ['as' => 'cart', 'uses' => 'CartController@index' ] );
+Route::get( '/cart/{id}/add', ['as' => 'cart.add', 'uses' => 'CartController@add' ] );
 
 /**
  * Admin Routes

@@ -15,13 +15,15 @@ class Cart {
 	}
 
 	public function add($id, $name, $price) {
-		$this->items + [
-				$id => [
-					'qtd' => isset( $this->items[ $id ][ 'qtd' ] ) ? $this->items[ $id ][ 'qtd' ]++:1,
-					'price' => $price,
-					'name' => $name,
-				]
-			];
+		$this->items += [
+			$id => [
+				'qtd' => isset( $this->items[ $id ] ) ? $this->items[ $id ][ 'qtd' ] ++ : 1,
+				'price' => $price,
+				'name' => $name,
+			]
+		];
+
+		return $this->items;
 	}
 
 	/**
