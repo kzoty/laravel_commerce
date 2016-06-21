@@ -3,7 +3,6 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Cart;
-use CodeCommerce\Category;
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Product;
 use Illuminate\Support\Facades\Session;
@@ -23,8 +22,6 @@ class CartController extends Controller {
 	public function __construct( Cart $cart ) {
 		$this->items = [];
 		$this->cart = $cart;
-        $categories = Category::all();
-        view()->share('categories', $categories);
 	}
 
     /**
@@ -45,15 +42,32 @@ class CartController extends Controller {
      * @return \Illuminate\Http\RedirectResponse
      */
     public function add( $id ) {
-	   if ( !Session::has( 'cart' ) ) {
-	   	    Session::set( 'cart', $this->cart );
-	   } else {
-	   	    $cart = Session::get( 'cart' );
-	   }
+	    $cart = $this->getCart();
 
-        $product = Product::find($id);
+	    $product = Product::find( $id );
         $cart->add( $id, $product->name, $product->price );
 
-        return redirect()->route('cart');
+        return redirect()->route( 'cart' );
     }
+
+    public function destroy( $id ) {
+    	$cart = $this->getCart();
+	    $cart->remove( $id );
+
+		return redirect()->route( 'cart' );
+    }
+
+	/**
+	 * @return mixed
+	 */
+	private function getCart()
+	{
+		if ( !Session::has( 'cart' ) ) {
+			Session::set( 'cart', $this->cart );
+		}
+
+		$cart = Session::get( 'cart' );
+
+		return $cart;
+	}
 }

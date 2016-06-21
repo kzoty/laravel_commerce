@@ -17,6 +17,7 @@ Route::get( '/product/{id}', ['as' => 'store.product', 'uses' => 'StoreControlle
 Route::get( '/tag/{id}', ['as' => 'store.bytag', 'uses' => 'StoreController@listByTag' ] );
 Route::get( '/cart', ['as' => 'cart', 'uses' => 'CartController@index' ] );
 Route::get( '/cart/{id}/add', ['as' => 'cart.add', 'uses' => 'CartController@add' ] );
+Route::get( '/cart/{id}/destroy', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy' ] );
 
 /**
  * Admin Routes
