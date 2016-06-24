@@ -36,15 +36,13 @@ class CartController extends Controller {
 	    $cart = Session::get('cart');
 
 	    foreach ( $cart->all() as $eachId => $eachItem ) {
-	    	$product = Product::find($eachId);
-	    	if( count( $product->images() ) ) {
-	    		$cart->setImage($eachId, '/uploads/' . $product->images[0]->id . '.jpg' );
-		    } else {
-		    	$cart->setImage( $eachId, '/images/no-img.jpg' );
-		    }
+	    	#if ( !$cart->getImage($eachId) ) {
+			    $product = Product::find($eachId);
+			    $cart->setImage( $eachId, $product->main_image );
+		    #}
 	    }
 
-        return view( 'store.cart', [ 'cart' => $cart ] );
+        return view( 'store.cart', [ 'cart' => Session::get('cart') ] );
 	}
 
 	/**

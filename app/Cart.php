@@ -50,6 +50,14 @@ class Cart {
 	}
 
 	/**
+	 * @param $key
+	 * @return mixed
+	 */
+	public function getImage( $key ) {
+		return  $this->items[ $key ][ 'image' ];
+	}
+
+	/**
 	 * @return int
 	 */
 	public function getTotal() {

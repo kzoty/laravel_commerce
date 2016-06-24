@@ -19,7 +19,7 @@
                     <tr class="">
                         <td class="cart_product">
                             <a href="">
-	                            <img src="{{$eachProduct[ 'image' ]}}" alt="" width="80">
+	                            <img src="{{$eachProduct['image']}}" alt="" width="80">
                             </a>
                         </td>
                         <td class="cart_description">

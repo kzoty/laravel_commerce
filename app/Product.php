@@ -32,6 +32,15 @@ class Product extends Model
 		return implode(',',$tags);
 	}
 
+	public function getMainImageAttribute() {
+		$images = $this->images->all();
+		if ( count( $images ) ) {
+			return '/uploads/' . $images[0]->id . '.' . $images[0]->extension;
+		} else {
+			return 'images/no-image.jpg';
+		}
+	}
+
 	static public function getProductsByTag( $id ) {
 		return Tag::find( $id )->products;
 	}
