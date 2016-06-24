@@ -20,6 +20,7 @@ class Cart {
 				'qtd' => isset( $this->items[ $id ] ) ? $this->items[ $id ][ 'qtd' ] ++ : 1,
 				'price' => $price,
 				'name' => $name,
+				'image' => '',
 			]
 		];
 
@@ -38,6 +39,14 @@ class Cart {
 	 */
 	public function all() {
 		return $this->items;
+	}
+
+	/**
+	 * @param $key
+	 * @param $image
+	 */
+	public function setImage( $key, $image ) {
+		$this->items[ $key ][ 'image' ] = $image;
 	}
 
 	/**

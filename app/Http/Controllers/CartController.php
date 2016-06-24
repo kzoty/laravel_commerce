@@ -24,38 +24,42 @@ class CartController extends Controller {
 		$this->cart = $cart;
 	}
 
-    /**
-     * List Cart.
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+	/**
+	 * List Cart.
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
     public function index() {
 	    if( !Session::has( 'cart' ) ) {
-		    Session::set( 'cart', $this->cart );
+			Session::set( 'cart', $this->cart );
+		}
+
+	    $cart = Session::get('cart');
+
+	    foreach ( $cart->all() as $eachId => $eachItem ) {
+	    	$product = Product::find($eachId);
+	    	if( count( $product->images() ) ) {
+	    		$cart->setImage($eachId, '/uploads/' . $product->images[0]->id . '.jpg' );
+		    } else {
+		    	$cart->setImage( $eachId, '/images/no-img.jpg' );
+		    }
 	    }
 
-        return view( 'store.cart', [ 'cart' => Session::get( 'cart' ) ] );
+        return view( 'store.cart', [ 'cart' => $cart ] );
 	}
 
-    /**
-     * Add product to Cart.
-     * @param $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
+	/**
+	 * Add product to Cart.
+	 * @param $id
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
     public function add( $id ) {
-	    $cart = $this->getCart();
+		$cart = $this->getCart();
 
-	    $product = Product::find( $id );
-        $cart->add( $id, $product->name, $product->price );
-
-        return redirect()->route( 'cart' );
-    }
-
-    public function destroy( $id ) {
-    	$cart = $this->getCart();
-	    $cart->remove( $id );
+		$product = Product::find( $id );
+		$cart->add( $id, $product->name, $product->price );
 
 		return redirect()->route( 'cart' );
-    }
+	}
 
 	/**
 	 * @return mixed
@@ -69,5 +73,12 @@ class CartController extends Controller {
 		$cart = Session::get( 'cart' );
 
 		return $cart;
+	}
+
+	public function destroy( $id ) {
+		$cart = $this->getCart();
+		$cart->remove( $id );
+
+		return redirect()->route( 'cart' );
 	}
 }

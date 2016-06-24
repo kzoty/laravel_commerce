@@ -15,11 +15,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($cart->all() as $eachKey => $eachProduct)
+                    @forelse($cart->all() as $eachKey => $eachProduct)
                     <tr class="">
                         <td class="cart_product">
                             <a href="">
-	                            <img src="#" alt="" width="80">
+	                            <img src="{{$eachProduct[ 'image' ]}}" alt="" width="80">
                             </a>
                         </td>
                         <td class="cart_description">
@@ -39,7 +39,22 @@
 		                    <a href="{{route('cart.destroy',['id'=>$eachKey])}}" class="btn btn-danger btn-sm">Delete</a>
 	                    </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="10">
+                            <p class="text-center">No items in Cart</p>
+                        </td>
+                    </tr>
+                    @endforelse
+                    <tr class="cart_menu">
+                        <td colspan="6">
+                            <div class="pull-right">
+                                <span>TOTAL: R$ {{number_format($cart->getTotal(), 2, ',', '.')}}</span>
+
+                                <a href="" class="btn btn-success">Fechar Conta</a>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 
