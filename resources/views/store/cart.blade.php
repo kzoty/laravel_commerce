@@ -30,7 +30,11 @@
                             R$ {{number_format( $eachProduct['price'], 2, ',', '.' )}}
                         </td>
                         <td>
-                            Qtd: {{$eachProduct['qtd']}}
+                            Qtd: <form method="get" action="{{route('cart.update', ['id'=>$eachKey])}}">
+                                <input type="number" name="qtd" value="{{$eachProduct['qtd']}}" style="width: 100px">
+
+                                <button class="btn btn-sm glyphicon glyphicon-refresh" type="submit" title="Update Cart"></button>
+                            </form>
                         </td>
 						<td>
 							<h3 class="text-danger">R$ {{number_format( $eachProduct['price'] * $eachProduct['qtd'], 2, ',', '.')}}</h3>

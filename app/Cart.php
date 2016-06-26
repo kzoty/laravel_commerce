@@ -27,6 +27,17 @@ class Cart {
 		return $this->items;
 	}
 
+    /**
+     * @param $id
+     * @param $qtd
+     * @return array
+     */
+    public function update($id, $qtd) {
+        $this->items[ $id ][ 'qtd' ] = $qtd;
+
+        return $this->items;
+    }
+
 	/**
 	 * @param $id
 	 */
