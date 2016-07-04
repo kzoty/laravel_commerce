@@ -19,6 +19,7 @@ Route::get( '/cart', ['as' => 'cart', 'uses' => 'CartController@index' ] );
 Route::get( '/cart/{id}/add', ['as' => 'cart.add', 'uses' => 'CartController@add' ] );
 Route::get( '/cart/{id}/destroy', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy' ] );
 Route::get( '/cart/{id}/update', ['as' => 'cart.update', 'uses' => 'CartController@update' ] );
+Route::get( '/checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place' ] );
 
 /**
  * Admin Routes
@@ -53,3 +54,9 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/destroyimage/{id}', ['as'=>'admin.products.destroyimage', 'uses' => 'AdminProductsController@destroyimage']);
     });
 });
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+    'test' => 'TestController',
+]);
