@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class CheckoutController extends Controller {
 
     public function __construct() {
-        $this->middleware( 'auth' );
+        $this->middleware( 'authClient' );
     }
 
     public function place(Order $orderModel, OrderItem $orderItem) {
