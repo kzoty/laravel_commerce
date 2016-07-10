@@ -12,11 +12,16 @@ use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller {
 
+    public function __construct() {
+        $this->middleware( 'auth' );
+    }
+
     public function place(Order $orderModel, OrderItem $orderItem) {
         if ( !Session::has( 'cart' ) ) {
             return false;
         }
         $cart = Session::get( 'cart' );
+        dd($cart);
 
 	    if ( $cart->getTotal() > 0 ) {
 	    	$order = $orderModel->create([
@@ -31,9 +36,7 @@ class CheckoutController extends Controller {
 		    		'qtd' => $eachItem[ 'qtd' ],
 		    		'total' => $eachItem[ 'price' ] * $eachItem[ 'qtd' ],
 			    ]);
-		    }
-
-		    dd($order->items());
+            }
 	    }
     }
 }

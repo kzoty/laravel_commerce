@@ -15,7 +15,7 @@ Route::get('/', ['as' => 'store.home', 'uses' => 'StoreController@index'] );
 Route::get( '/category/{id}', ['as' => 'store.bycategory', 'uses' => 'StoreController@listByCategory' ] );
 Route::get( '/product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product' ] );
 Route::get( '/tag/{id}', ['as' => 'store.bytag', 'uses' => 'StoreController@listByTag' ] );
-Route::get( '/cart', ['as' => 'cart', 'uses' => 'CartController@index' ] );
+Route::get( '/cart', ['as' => 'cart', 'middleware' => 'authClient', 'uses' => 'CartController@index' ] );
 Route::get( '/cart/{id}/add', ['as' => 'cart.add', 'uses' => 'CartController@add' ] );
 Route::get( '/cart/{id}/destroy', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy' ] );
 Route::get( '/cart/{id}/update', ['as' => 'cart.update', 'uses' => 'CartController@update' ] );
@@ -24,7 +24,7 @@ Route::get( '/checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'Checko
 /**
  * Admin Routes
  */
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', function(){
         return redirect(route( 'admin.products' ));
     });
@@ -58,5 +58,4 @@ Route::group(['prefix' => 'admin'], function() {
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
-    'test' => 'TestController',
 ]);

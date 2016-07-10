@@ -55,7 +55,7 @@
                             <div class="pull-right">
                                 <span>TOTAL: R$ {{number_format($cart->getTotal(), 2, ',', '.')}}</span>
 
-                                <a href="" class="btn btn-success">Fechar Conta</a>
+                                <a href="{{route('checkout.place')}}" class="btn btn-success">Fechar Conta</a>
                             </div>
                         </td>
                     </tr>

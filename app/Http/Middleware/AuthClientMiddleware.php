@@ -5,24 +5,19 @@ namespace CodeCommerce\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Authenticate
-{
+class AuthClientMiddleware {
     /**
-     * The Guard implementation.
-     *
      * @var Guard
      */
-    protected $auth;
+    private $guard;
 
     /**
-     * Create a new middleware instance.
-     *
-     * @param  Guard  $auth
-     * @return void
+     * AuthClientMiddleware constructor.
+     * @param Guard $guard
      */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
+    public function __construct(Guard $guard) {
+
+        $this->guard = $guard;
     }
 
     /**
@@ -32,9 +27,8 @@ class Authenticate
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        if ($this->auth->guest() || !$this->auth->user()->is_admin) {
+    public function handle($request, Closure $next) {
+        if (!$this->guard->user()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
