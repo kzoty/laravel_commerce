@@ -21,7 +21,6 @@ class CheckoutController extends Controller {
             return false;
         }
         $cart = Session::get( 'cart' );
-        dd($cart);
 
 	    if ( $cart->getTotal() > 0 ) {
 	    	$order = $orderModel->create([
@@ -37,6 +36,11 @@ class CheckoutController extends Controller {
 		    		'total' => $eachItem[ 'price' ] * $eachItem[ 'qtd' ],
 			    ]);
             }
+
+            /**
+             * Clean cart.
+             */
+            Session::forget('cart');
 	    }
     }
 }
