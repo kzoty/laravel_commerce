@@ -53,7 +53,11 @@
                             <li><a href="#"><i class="fa fa-user"></i> Minha conta</a></li>
                             <li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
+                            @if(Auth::guest())
                             <li><a href="/auth/login"><i class="fa fa-lock"></i> Login</a></li>
+                            @else
+                            <li><a href="/auth/logout"><i class="fa fa-lock"></i> Logout ( {{Auth::user()->name}} )</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

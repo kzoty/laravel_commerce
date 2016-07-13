@@ -2,18 +2,30 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Cart;
 use CodeCommerce\Order;
 use CodeCommerce\OrderItem;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+/**
+ * @property Cart cart
+ */
 class CheckoutController extends Controller {
 
-    public function __construct() {
+    protected $cart;
+    
+    /**
+     * CheckoutController constructor.
+     * @param Cart $cart
+     */
+    public function __construct(Cart $cart) {
         $this->middleware( 'authClient' );
+        $this->cart = $cart;
     }
 
     public function place(Order $orderModel, OrderItem $orderItem) {
@@ -21,10 +33,10 @@ class CheckoutController extends Controller {
             return false;
         }
         $cart = Session::get( 'cart' );
-
+        
 	    if ( $cart->getTotal() > 0 ) {
 	    	$order = $orderModel->create([
-				'user_id' => 1,
+				'user_id' => Auth::User()->id,
 			    'total' => $cart->getTotal(),
 		    ]);
 
@@ -40,7 +52,11 @@ class CheckoutController extends Controller {
             /**
              * Clean cart.
              */
-            Session::forget('cart');
-	    }
+		    $cart->clean();
+	    } else {
+            $order = null;
+        }
+
+        return view('store.checkout', compact('order'));
     }
 }

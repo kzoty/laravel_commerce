@@ -1,4 +1,4 @@
-@extends('admin.base')
+@extends('store.base')
 
 @section('content')
 <div class="container-fluid">
@@ -50,6 +50,9 @@
 								<button type="submit" class="btn btn-primary">Login</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+								<br>
+								<br>
+								<b><a href="{{url('/auth/register')}}">Clique aqui para se cadastrar!</a></b>
 							</div>
 						</div>
 					</form>
