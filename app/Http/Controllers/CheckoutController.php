@@ -24,7 +24,6 @@ class CheckoutController extends Controller {
      * @param Cart $cart
      */
     public function __construct(Cart $cart) {
-        $this->middleware( 'authClient' );
         $this->cart = $cart;
     }
 

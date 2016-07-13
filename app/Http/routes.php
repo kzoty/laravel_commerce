@@ -19,7 +19,11 @@ Route::get( '/cart', ['as' => 'cart', 'uses' => 'CartController@index' ] );
 Route::get( '/cart/{id}/add', ['as' => 'cart.add', 'uses' => 'CartController@add' ] );
 Route::get( '/cart/{id}/destroy', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy' ] );
 Route::get( '/cart/{id}/update', ['as' => 'cart.update', 'uses' => 'CartController@update' ] );
-Route::get( '/checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place' ] );
+
+Route::group(['middleware'=>'authClient'], function (){
+	Route::get( '/checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place' ] );
+	Route::get( '/account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders' ] );
+});
 
 /**
  * Admin Routes
