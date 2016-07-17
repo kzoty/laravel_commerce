@@ -25,6 +25,7 @@ Route::group(['middleware'=>'authClient'], function (){
 	Route::get( '/account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders' ] );
 });
 
+
 /**
  * Admin Routes
  */

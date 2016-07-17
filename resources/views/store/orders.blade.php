@@ -1,9 +1,9 @@
 @extends('store.base')
 
 @section('content')
-    <div class="col-sm-9 padding-right">
+    <div>
         <h3>Meus Pedidos</h3>
-        <table class="table table-bordered table-striped">
+        <table class="table table-responsive table-bordered table-striped">
 	        <tbody>
 	        <tr>
 		        <th>#ID</th>
