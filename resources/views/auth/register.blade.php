@@ -49,6 +49,52 @@
 							</div>
 						</div>
 
+                        <hr>
+                        <h4 class="text-center">Endereço</h4>
+                        <br />
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Rua</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="street" value="{{ old('street') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Numero</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-one" name="number" value="{{ old('number') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Cidade</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="city" value="{{ old('city') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Estado</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="state" value="{{ old('state') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">País</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="country" value="{{ old('country') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">CEP</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-one" name="zip" value="{{ old('zip') }}">
+                            </div>
+                        </div>
+
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UsersAddFieldIsAdmin extends Migration
+class AlterTableOrder extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class UsersAddFieldIsAdmin extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_admin')->default(0);
+        Schema::table('orders', function (Blueprint $table) {
+            $table->renameColumn('status', 'status_id');
         });
     }
 
@@ -24,8 +24,8 @@ class UsersAddFieldIsAdmin extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-	        $table->removeColumn('is_admin');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->renameColumn('status_id', 'status');
         });
     }
 }
