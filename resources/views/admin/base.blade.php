@@ -14,6 +14,7 @@
     </div>
     <div class="navbar-text"><a href="{{route('admin.categories')}}">Categories</a></div>
     <div class="navbar-text"><a href="{{route('admin.products')}}">Products</a></div>
+    <div class="navbar-text"><a href="{{route('admin.orders')}}">Orders</a></div>
 </nav>
 <div class="container">
     @yield('content')

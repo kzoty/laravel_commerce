@@ -50,9 +50,9 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{route('account.orders')}}"><i class="fa fa-user"></i> Minha conta</a></li>
-                            <li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
+                            <li><a href="{{ route('account.orders') }}"><i class="fa fa-user"></i> Minha conta</a></li>
+                            <li><a href="{{ route('checkout.place') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
                             @if(Auth::guest())
                             <li><a href="/auth/login"><i class="fa fa-lock"></i> Login</a></li>
                             @else

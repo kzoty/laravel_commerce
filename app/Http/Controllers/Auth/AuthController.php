@@ -52,7 +52,7 @@ class AuthController extends Controller
             'city' => 'required|min:3',
             'state' => 'required|min:2',
             'country' => 'required|min:3',
-            'zip' => 'required|min:8',
+            'zip' => 'required|min:8'
         ]);
     }
 
@@ -73,7 +73,7 @@ class AuthController extends Controller
             'city' => $data['city'],
             'state' => $data['state'],
             'country' => $data['country'],
-            'zip' => $data['zip'],
+            'zip' => $data['zip']
         ]);
     }
 }
